@@ -52,3 +52,11 @@ pip install -r requirements.txt
 # Start the FastAPI engine
 uvicorn backend.main:app --reload
 
+*The backend will run at `http://127.0.0.1:8000`.*
+
+### 2. Launch the Dashboard
+1. Open the `frontend` directory in VS Code.
+2. Right-click `index.html` and select **"Open with Live Server"**.
+3. Select your algorithm (A* or BFS), click **Start Simulation**, and use the **Spawn Sudden Fire** button to test the dynamic replanning!
+
+---
