@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQ AI | Multi-Agent Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ResQ AI Simulation Dashboard</h1>
+        <div class="controls">
+            <select id="algo-select" style="padding: 5px; margin-right: 10px;">
+                <option value="A*">A* Search (Priority/Heuristic)</option>
+                <option value="BFS">BFS (Level-Order/Blind)</option>
+            </select>
+            <button id="start-btn">Start Simulation</button>
+            <button id="hazard-btn" style="background-color: #ff4d4d; color: white; margin-left: 10px;">🔥 Spawn Sudden Fire</button>
+        </div>
+    </header>
+    
+    <main>
+        <section class="simulation-area">
+            <div id="grid-container" class="grid"></div>
+        </section>
+        
+        <aside class="sidebar-area">
+            <div class="legend-area">
+                <h3>Legend</h3>
+                <ul>
+                    <li><span class="legend-box cell-R"></span> Rescue Base (R)</li>
+                    <li><span class="legend-box cell-agent"></span> Active Agent (A)</li>
+                    <li><span class="legend-box cell-V"></span> Victim (V)</li>
+                    <li><span class="legend-box cell-F"></span> Hazard/Fire (F)</li>
+                    <li><span class="legend-box cell-obs"></span> Obstacle (#)</li>
+                </ul>
+            </div>
+            
+            <div class="log-area">
+                <h3>Rescue Events Log</h3>
+                <ul id="log-list"></ul>
+            </div>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

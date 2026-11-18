@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --grid-border: #ccc;
+    --cell-safe: #ffffff;
+    --cell-obs: #4a4a4a;
+    --cell-fire: #ff4d4d;
+    --cell-victim: #ffd700;
+    --cell-rescue: #4CAF50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 15x15 CSS Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(15, 30px);
+    gap: 1px;
+    background-color: var(--grid-border);
+    border: 2px solid #333;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Cell Types */
+.cell-safe { background-color: var(--cell-safe); }
+.cell-obs { background-color: var(--cell-obs); color: white; }
+.cell-F { background-color: var(--cell-fire); color: white; }
+.cell-V { background-color: var(--cell-victim); color: black; }
+.cell-R { background-color: var(--cell-rescue); color: white; }
+
+/* Legend Styling */
+.legend-area ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legend-area li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+
+/* New Agent & Log Styles */
+.cell-agent { 
+    background-color: #007bff; 
+    color: white; 
+    border-radius: 50%; /* Make the agent a circle */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.sidebar-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+
+.log-area {
+    background: #fff;
+    border: 1px solid var(--grid-border);
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.log-area ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.log-area li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
